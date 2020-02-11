@@ -1,0 +1,7 @@
+Usage:
+
+- Add @EnableIgniteRepositories(repositoryFactoryBeanClass = ExtendedIgniteRepositoryFactoryBean.class, repositoryBaseClass = ExtendedIgniteRepositoryImplementation.class)
+- Annotate your Repository with @RepositoryConfig(cacheName = "cache-name") and extend ExtendedIgniteRepository<Entity,Key>
+- Add to your Entity a field id annotated with @Id (@org.springframework.data.annotation.Id)
+- Use @Unique for unique fields and @CompositeUnique for unique groups
+- Create a CacheConfiguration per cache and initialize a Ignite bean with them.
